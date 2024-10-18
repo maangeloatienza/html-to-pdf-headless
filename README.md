@@ -1,4 +1,4 @@
-# HTML to PDF (Headeless Solution)
+# HTML to PDF (Headless Solution)
 
 An open-source API for setting up API to generate PDF from a given URL and option to add css restrictions.
 
@@ -19,7 +19,13 @@ yarn install
 
 Current endpoint points to `/` route, but you can change it depends on your setup.
 
-To send a request call **your specified endpoint (default `/`)** under `app.js`, with a required query `?url=<urlToGenerate>` and an optional body `excludedSections=< .container{display:none;} .navbar{display:none;}  >`.
+To send a request call **your specified endpoint (default `/`)** under `app.js`, with a required query `?url=<urlToGenerate>` and an optional body 
+```json
+{
+    "excludedSections": ".container{display:none;} .navbar{display:none;}"
+}
+```
+
 
 The **excludedSections** query is a string of css styling that you can define before generating the PDF. Take note that the ***css styling selector should be existing on the page*** you are generating from.
 
