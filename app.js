@@ -47,7 +47,6 @@ app.get('/',async (req,res,next)=>{
     const responseObj = pdf.map((item)=>{
         item.title = (item.title).replaceAll(" | Documentation Center","")
         filename = (item.title).replaceAll(" ","_")
-        console.log(filename)
         archive.append(Buffer.from(item.file), { name: `${filename}.pdf` });
         // return {
         //     [index] : item.toString('base64')
